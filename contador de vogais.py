@@ -1,29 +1,54 @@
-# Função que conta quantas vogais existem em um texto
+# ==========================================
+# CONTADOR DE VOGAIS
+# ==========================================
+
+# Função responsável por contar as vogais
 def contar_vogais(texto):
-    
-    # Variável que vai armazenar a quantidade de vogais encontradas
+
+    # Lista contendo todas as vogais
+    vogais = "aeiou"
+
+    # Variável que armazena a quantidade total
     contador = 0
 
     # Percorre cada letra do texto
-    # lower() transforma tudo em minúsculo
-    # para facilitar a comparação
     for letra in texto.lower():
 
-        # Verifica se a letra atual é uma vogal
-        if letra in "aeiou":
+        # Verifica se a letra é uma vogal
+        if letra in vogais:
 
-            # Se for vogal, soma 1 ao contador
+            # Soma +1 ao contador
             contador += 1
 
-    # Retorna a quantidade total de vogais
+    # Retorna o total encontrado
     return contador
 
 
-# Pede para o usuário digitar uma frase
-frase = input("Digite uma frase: ")
+# ==========================================
+# ENTRADA DE DADOS
+# ==========================================
 
-# Chama a função e guarda o resultado
+print("=" * 50)
+print("      CONTADOR DE VOGAIS")
+print("=" * 50)
+
+# Permite ao usuário digitar uma frase grande
+frase = input("\nDigite uma frase:\n> ")
+
+# Chama a função
 resultado = contar_vogais(frase)
 
-# Exibe o total de vogais encontradas
-print("Número de vogais na frase:", resultado)
+# ==========================================
+# SAÍDA
+# ==========================================
+
+print("\n" + "=" * 50)
+print("RESULTADO")
+print("=" * 50)
+
+print(f"\nFrase digitada:")
+print(f'"{frase}"')
+
+print(f"\nQuantidade de vogais: {resultado}")
+
+print("\nPrograma finalizado!")
